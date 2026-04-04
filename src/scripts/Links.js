@@ -8,4 +8,6 @@ export const scrollToSection = (id) => {
   }
 };
 
-export const instagram = () => {};
+export const goToInstagram = () => {
+  window.open("https://www.instagram.com/mga.nunal/");
+};
