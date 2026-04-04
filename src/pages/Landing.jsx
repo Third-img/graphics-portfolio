@@ -35,7 +35,7 @@ export default function Landing() {
       <div
         className="
         w-full 
-        h-dvh
+        h-svh
         font-anton
         uppercase
         overflow-hidden
@@ -88,7 +88,7 @@ export default function Landing() {
       </div>
       <div
         id="about-section"
-        className="w-full min-h-dvh text-red-ochre bg-sand-dune border-t-4 border-dashed border-red-ochre"
+        className="w-full min-h-svh text-red-ochre bg-sand-dune border-t-4 border-dashed border-red-ochre"
       >
         <img
           id="id-design"
@@ -160,7 +160,7 @@ export default function Landing() {
       <div
         id="graphic-designs-section"
         className="
-        min-h-dvh
+        min-h-svh
         max-w-full 
        text-red-ochre
        bg-sand-dune
