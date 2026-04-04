@@ -37,7 +37,7 @@ export default function Landing() {
       <div
         className="
         w-full 
-        h-screen 
+        h-svh 
         font-anton
         uppercase
         overflow-hidden
@@ -160,7 +160,7 @@ export default function Landing() {
       <div
         id="graphic-designs-section"
         className="
-        min-h-dvh
+        min-h-svh
         max-w-full 
        text-red-ochre
        bg-sand-dune
