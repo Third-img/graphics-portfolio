@@ -9,7 +9,7 @@ export default function Gallery() {
   return (
     <div className="columns-2 sm:columns-3 lg:columns-4 px-5 leading-none gap-x-2 w-full mb-5">
       {images.map((src, i) => (
-        <div className="">
+        <div className="w-fit h-fit">
           <img
             key={i}
             src={src}
