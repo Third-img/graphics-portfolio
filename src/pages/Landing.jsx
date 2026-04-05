@@ -9,7 +9,9 @@ import Education from "../assets/img/asset_7.png";
 import StickerOne from "../assets/img/asset_3.png";
 import Instagram from "../assets/img/asset_5.png";
 import Gallery from "../components/Gallery.jsx";
+import Icons from "../components/Icons.jsx";
 import eventEmail from "../scripts/Mail";
+import WorkingVideo from "../assets/video/editing.mp4";
 import { scrollToSection, goToInstagram } from "../scripts/Links.js";
 
 export default function Landing() {
@@ -32,6 +34,7 @@ export default function Landing() {
 
         <rect width="100%" height="100%" filter="url(#noiseFilter)" />
       </svg>
+
       <div
         className="
         w-full 
@@ -147,6 +150,10 @@ export default function Landing() {
           />
         </div>
         <img src={StickerOne} alt="sticker" className="w-full pb-8 px-15" />
+        <div className="flex flex-col justify-center items-center pb-5">
+          <div className="text-5xl font-modak uppercase leading-2 pb-4">stack</div>
+          <Icons />
+        </div>
       </div>
       <div
         id="social-posts-section"
@@ -176,6 +183,16 @@ export default function Landing() {
       >
         <div className="m-5">Graphics</div>
         <Gallery />
+        <div className="z-1 h-full w-screen px-5 pb-5 ">
+          <video
+            src={WorkingVideo}
+            className="h-full object-cover rounded-xl"
+            autoPlay
+            muted
+            loop
+            playsInline
+          ></video>
+        </div>
       </div>
       <div
         id="email-section"
