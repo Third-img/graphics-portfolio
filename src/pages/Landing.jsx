@@ -17,7 +17,6 @@ import {
   goToInstagram,
   goToLinkedIn,
 } from "../scripts/Links.js";
-import "../about.css";
 
 export default function Landing() {
   return (
@@ -85,13 +84,13 @@ export default function Landing() {
             let's collab
           </span>
         </div>
-        <div className="absolute top-1 left-1 text-6xl md:text-9xl lg:text-[12rem]">
+        <div className="absolute top-1 left-1 text-6xl md:text-9xl 2xl:text-[12rem]">
           I'm
         </div>
-        <div className="absolute top-1 right-1 text-6xl md:text-9xl lg:text-[12rem]">
+        <div className="absolute top-1 right-1 text-6xl md:text-9xl 2xl:text-[12rem]">
           Third
         </div>
-        <div className="absolute bottom-1 left-1 text-6xl md:text-9xl lg:text-[12rem]">
+        <div className="absolute bottom-1 left-1 text-6xl md:text-9xl 2xl:text-[12rem]">
           A
         </div>
         <div
@@ -102,8 +101,8 @@ export default function Landing() {
         text-6xl 
         md:text-9xl
         md:leading-30
-        lg:text-[12rem]
-        lg:leading-43
+        2xl:text-[12rem]
+        2xl:leading-43
         leading-15 
         text-right"
         >
@@ -115,25 +114,25 @@ export default function Landing() {
         id="about-section"
         className="w-full min-h-svh text-red-ochre bg-sand-dune border-t-4 border-dashed border-red-ochre relative overflow-hidden"
       >
-        <img id="id-design" src={ID} alt="id badge" className="w-350" />
+        <img id="id-design" src={ID} alt="id badge" className="w-full lg:w-[30%] lg:absolute lg:top-0" />
         <div
           id="paragraph-container"
-          className="px-20 font-helvetica text-center text-sm md:text-lg lg:text-xl leading-4 drop-shadow-"
+          className="px-20 font-helvetica text-center text-sm md:text-lg lg:text-xl leading-4"
           style={{ filter: "drop-shadow(0 0 2px)" }}
         >
-          <div id="paragraph-one" className="pb-1">
+          <div id="paragraph-one" className="pb-1 lg:w-30 lg:absolute lg:top-3 lg:left-[24%]">
             I enjoy making visuals because I’ve consumed various medias and I
             like to make my own things exist.
           </div>
-          <div id="paragraph-two" className="pb-1">
+          <div id="paragraph-two" className="pb-1 lg:w-40 lg:absolute lg:top-20 lg:left-[36%]">
             There’s also this weird desire to know what’s behind every great
             design, and my goal is to be others’ inspiration
           </div>
-          <div id="paragraph-three" className="pb-1">
+          <div id="paragraph-three" className="pb-1 lg:w-60 lg:absolute lg:top-60 lg:left-[36%]">
             I love doing all these exhausting work with coffee by my side,
             making it worth the while and the workload to taste better.
           </div>
-          <div id="paragraph-four" className="pb-2">
+          <div id="paragraph-four" className="pb-2 lg:w-40 lg:absolute lg:top-90 lg:left-[38%]">
             My life purpose is to improve, improve on everything that I do and
             I'll make sure that it happens.
           </div>
@@ -142,13 +141,13 @@ export default function Landing() {
           id="education-container"
           src={Education}
           alt="eudcation"
-          className="w-full px-15 pb-10"
+          className="w-full px-15 pb-10 lg:absolute lg:w-[40%] lg:top-[10%] lg:right-0 lg:rotate-3"
         />
-        <div id="job-container" className="overflow-hidden pt-5">
+        <div id="job-container" className="overflow-hidden pt-5 px-5 lg:absolute lg:left-1 lg:bottom-1 lg:w-[20%]">
           <img
             src={Experience}
             alt="experience title"
-            className="w-full px-20 rotate-5 pb-5"
+            className="w-full rotate-5 pb-5"
             id="experience-placard"
           />
           <img
@@ -160,13 +159,13 @@ export default function Landing() {
           <img
             src={JobOne}
             alt="job one"
-            className="w-full px-20 -rotate-8 pb-5"
+            className="w-full -rotate-8 pb-5"
             id="student-placard"
           />
           <img
             src={JobTwo}
             alt="job two"
-            className="w-full px-20 rotate-9 pb-5"
+            className="w-full rotate-9 pb-5"
             id="starbucks-placard"
           />
           <img
@@ -180,11 +179,11 @@ export default function Landing() {
           id="sticker-one"
           src={StickerOne}
           alt="sticker"
-          className="w-full pb-15 px-15"
+          className="w-full pb-15 px-15 lg:absolute lg:w-[20%] lg:right-1 lg:top-2 lg:p-0"
         />
         <div
           id="editing-tools"
-          className="flex flex-col justify-center items-center pb-5"
+          className="flex flex-col self-end-safe items-center pb-5 lg:absolute lg:bottom-1 lg:left-[25%]"
         >
           <Icons />
         </div>

@@ -8,12 +8,12 @@ const images = Object.values(
 export default function Icons() {
   return (
     <div
-      className="flex gap-1.5 leading-none px-2 w-fit m-0
-            p-0"
+      className="flex gap-1.5 px-2 w-fit m-0
+            p-2 border-2 border-cherry-0 rounded-xl"
     >
       {images.map((src, i) => (
-        <div className="flex items-center justify-center h-10">
-          <img key={i} src={src} alt="" className="block h-10 w-auto" />
+        <div className="flex items-center justify-center">
+          <img key={i} src={src} alt="" className="block h-10 md:h-14 lg:h-17 w-auto" />
         </div>
       ))}
     </div>
