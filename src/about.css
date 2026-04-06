@@ -1,0 +1,116 @@
+@media screen and (min-width: 500px) {
+  #id-design {
+    position: absolute;
+    top: 0%;
+    left: -15%;
+    max-width: 50%;
+  }
+  #education-container {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    max-width: 25%;
+    padding: 0;
+    rotate: 8deg;
+  }
+  #experience-placard {
+    padding: 0;
+  }
+  #student-placard {
+    padding: 0;
+  }
+  #starbucks-placard {
+    padding: 0;
+  }
+  #dateOne-sticker {
+    padding: 0;
+  }
+  #dateTwo-sticker {
+    padding: 0;
+  }
+  #job-container {
+    position: absolute;
+    top: 1%;
+    right: 30%;
+    max-width: 25%;
+    padding: 0;
+  }
+
+  #sticker-one {
+    position: absolute;
+    bottom: -1%;
+    left: 24%;
+    max-width: 40%;
+    padding: 0;
+  }
+  #editing-tools {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    padding: 0;
+    margin: 0;
+  }
+  #paragraph-container {
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    z-index: 20;
+  }
+}
+@media screen and (min-width: 1440px) {
+  #id-design {
+    position: absolute;
+    top: 0%;
+    max-width: 40%;
+  }
+  #education-container {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    max-width: 25%;
+    padding: 0;
+    rotate: 8deg;
+  }
+  #experience-placard {
+    padding: 0;
+  }
+  #student-placard {
+    padding: 0;
+  }
+  #starbucks-placard {
+    padding: 0;
+  }
+  #dateOne-sticker {
+    padding: 0;
+  }
+  #dateTwo-sticker {
+    padding: 0;
+  }
+  #job-container {
+    position: absolute;
+    top: 1%;
+    right: 30%;
+    max-width: 25%;
+    padding: 0;
+  }
+
+  #sticker-one {
+    position: absolute;
+    bottom: 1%;
+    left: 10%;
+    max-width: 25%;
+    padding: 0;
+  }
+  #editing-tools {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    padding: 0;
+    margin: 0;
+  }
+  #paragraph-container {
+    position: absolute;
+    top: 55%;
+    left: 15%;
+  }
+}

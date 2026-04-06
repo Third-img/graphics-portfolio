@@ -41,4 +41,6 @@
 html {
   background-color: var(--color-surface-0);
 }
-
+html::-webkit-scrollbar {
+  display: none;
+}
