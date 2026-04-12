@@ -1,14 +1,10 @@
 import { useState, useEffect } from "react";
 import WorkingVideo from "../assets/video/editing.mp4";
 
-const images = Object.values(
-  import.meta.glob("../assets/graphics/*.{jpeg,png}", {
-    eager: true,
-    import: "default",
-  }),
-);
+import { usePortfolio } from "../hooks/usePortfolio";
 
 export default function Gallery() {
+  const { items, loading } = usePortfolio();
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
 
@@ -36,15 +32,17 @@ export default function Gallery() {
     };
   }, [selectedVideo]);
 
+  if (loading) return <p className="uppercase">Loading</p>;
+
   return (
     <>
       <div className="columns-2 sm:columns-3 lg:columns-6 px-5 leading-none gap-x-2 w-full mb-5 overflow-hidden">
-        {images.map((src, i) => (
+        {items.map((item) => (
           <div className="w-full">
             <img
-              key={i}
-              src={src}
-              alt=""
+              key={item.id}
+              src={item.imageUrl}
+              alt={item.title}
               className="
             block 
             w-full 
@@ -55,7 +53,7 @@ export default function Gallery() {
             mb-2 
             break-inside-avoid
             cursor-pointer"
-              onClick={() => setSelectedImage(i)}
+              onClick={() => setSelectedImage(item)}
             />
           </div>
         ))}
@@ -71,7 +69,8 @@ export default function Gallery() {
           ></video>
         </div>
       </div>
-      {selectedImage !== null && (
+
+      {selectedImage  !== null && (
         <div
           className="w-full max-h-screen fixed inset-0 bg-black/90 flex items-center justify-center z-50"
           onClick={() => setSelectedImage(null)}
@@ -83,8 +82,8 @@ export default function Gallery() {
             x
           </button>
           <img
-            src={images[selectedImage]}
-            alt="preview"
+            src={selectedImage.imageUrl}
+            alt={selectedImage.title}
             className="max-w-[90%] max-h-[90%] rounded-xl z-70"
           />
         </div>
