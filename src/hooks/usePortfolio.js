@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 
-export function usePortfolio() {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+export function useImages() {
+  const [imageItems, setItems] = useState([]);
+  const [imageLoading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchItems() {
@@ -19,5 +19,5 @@ export function usePortfolio() {
     }
     fetchItems();
   }, []);
-  return { items, loading };
+  return { imageItems, imageLoading };
 }

@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
-import WorkingVideo from "../assets/video/editing.mp4";
-
-import { usePortfolio } from "../hooks/usePortfolio";
+import { useImages } from "../hooks/usePortfolio";
 
 export default function Gallery() {
-  const { items, loading } = usePortfolio();
+  const { imageItems, imageLoading } = useImages();
   const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
     if (selectedImage !== null) {
@@ -20,29 +17,19 @@ export default function Gallery() {
     };
   }, [selectedImage]);
 
-  useEffect(() => {
-    if (selectedVideo !== null) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
 
-    return () => {
-      document.body.style.overflow = "auto";
-    };
-  }, [selectedVideo]);
-
-  if (loading) return <p className="uppercase">Loading</p>;
+  if (imageLoading) return <p className="uppercase">Loading</p>;
+  // if (videoLoading) return <p className="uppercase">Loading</p>;
 
   return (
     <>
       <div className="columns-2 sm:columns-3 lg:columns-6 px-5 leading-none gap-x-2 w-full mb-5 overflow-hidden">
-        {items.map((item) => (
+        {imageItems.map((imageItem) => (
           <div className="w-full">
             <img
-              key={item.id}
-              src={item.imageUrl}
-              alt={item.title}
+              key={imageItem.id}
+              src={imageItem.imageUrl}
+              alt={imageItem.title}
               className="
             block 
             w-full 
@@ -53,24 +40,12 @@ export default function Gallery() {
             mb-2 
             break-inside-avoid
             cursor-pointer"
-              onClick={() => setSelectedImage(item)}
+              onClick={() => setSelectedImage(imageItem)}
             />
           </div>
         ))}
-        <div className="h-full w-full mb-2">
-          <video
-            src={WorkingVideo}
-            className="object-contain rounded-xl overflow-hidden cursor-pointer"
-            autoPlay
-            muted
-            loop
-            playsInline
-            onClick={() => setSelectedVideo()}
-          ></video>
-        </div>
       </div>
-
-      {selectedImage  !== null && (
+      {selectedImage !== null && (
         <div
           className="w-full max-h-screen fixed inset-0 bg-black/90 flex items-center justify-center z-50"
           onClick={() => setSelectedImage(null)}
@@ -88,7 +63,7 @@ export default function Gallery() {
           />
         </div>
       )}
-      {selectedVideo !== null && (
+      {/* {selectedVideo !== null && (
         <div
           className="w-full max-h-screen fixed inset-0 bg-black/90 flex items-center justify-center z-50"
           onClick={() => setSelectedVideo(null)}
@@ -100,7 +75,7 @@ export default function Gallery() {
             x
           </button>
           <video
-            src={WorkingVideo}
+            src={selectedVideo.videoUrl}
             alt="video"
             className="w-[80%] max-h-[80%] rounded-lg lg:rounded-3xl z-70"
             controls
@@ -110,7 +85,7 @@ export default function Gallery() {
             playsInline
           />
         </div>
-      )}
+      )} */}
     </>
   );
 }

@@ -13,7 +13,7 @@ export default function Icons() {
     >
       {images.map((src, i) => (
         <div className="flex items-center justify-center">
-          <img key={i} src={src} alt="" className="block h-10 md:h-14 lg:h-17 w-auto" />
+          <img key={i} src={src} alt="" className="block h-10 w-auto" />
         </div>
       ))}
     </div>
