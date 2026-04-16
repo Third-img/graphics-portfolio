@@ -10,13 +10,14 @@ import StickerOne from "../assets/img/asset_3.png";
 import Instagram from "../assets/img/asset_5.png";
 import Gallery from "../components/Gallery.jsx";
 import Icons from "../components/Icons.jsx";
-import SlidingPost from "../components/SlidingPost.jsx";
+import { UploadModal } from "../components/Modal.jsx";
 import eventEmail from "../scripts/Mail";
 import {
   scrollToSection,
   goToInstagram,
   goToLinkedIn,
 } from "../scripts/Links.js";
+import "../scripts/uploadGraphicForm.js";
 
 export default function Landing() {
   return (
@@ -38,6 +39,7 @@ export default function Landing() {
 
         <rect width="100%" height="100%" filter="url(#noiseFilter)" />
       </svg>
+      {/* <UploadModal /> */}
       <div
         className="
         w-full 
@@ -114,25 +116,42 @@ export default function Landing() {
         id="about-section"
         className="w-full min-h-svh text-red-ochre bg-sand-dune border-t-4 border-dashed border-red-ochre relative overflow-hidden"
       >
-        <img id="id-design" src={ID} alt="id badge" className="w-full lg:w-[30%] lg:absolute lg:top-0" />
+        <img
+          id="id-design"
+          src={ID}
+          alt="id badge"
+          className="w-full lg:w-[30%] lg:absolute lg:top-0"
+        />
         <div
           id="paragraph-container"
           className="px-20 font-helvetica text-center text-sm md:text-lg lg:text-xl leading-4"
           style={{ filter: "drop-shadow(0 0 2px)" }}
         >
-          <div id="paragraph-one" className="pb-1 lg:w-30 lg:absolute lg:top-3 lg:left-[24%]">
+          <div
+            id="paragraph-one"
+            className="pb-1 lg:w-30 lg:absolute lg:top-3 lg:left-[24%]"
+          >
             I enjoy making visuals because I’ve consumed various medias and I
             like to make my own things exist.
           </div>
-          <div id="paragraph-two" className="pb-1 lg:w-40 lg:absolute lg:top-20 lg:left-[36%]">
+          <div
+            id="paragraph-two"
+            className="pb-1 lg:w-40 lg:absolute lg:top-20 lg:left-[36%]"
+          >
             There’s also this weird desire to know what’s behind every great
             design, and my goal is to be others’ inspiration
           </div>
-          <div id="paragraph-three" className="pb-1 lg:w-60 lg:absolute lg:top-60 lg:left-[36%]">
+          <div
+            id="paragraph-three"
+            className="pb-1 lg:w-60 lg:absolute lg:top-60 lg:left-[36%]"
+          >
             I love doing all these exhausting work with coffee by my side,
             making it worth the while and the workload to taste better.
           </div>
-          <div id="paragraph-four" className="pb-2 lg:w-40 lg:absolute lg:top-90 lg:left-[38%]">
+          <div
+            id="paragraph-four"
+            className="pb-2 lg:w-40 lg:absolute lg:top-90 lg:left-[38%]"
+          >
             My life purpose is to improve, improve on everything that I do and
             I'll make sure that it happens.
           </div>
@@ -143,7 +162,10 @@ export default function Landing() {
           alt="eudcation"
           className="w-full px-15 pb-10 lg:absolute lg:w-[40%] lg:top-[10%] lg:right-0 lg:rotate-3"
         />
-        <div id="job-container" className="overflow-hidden pt-5 px-5 lg:absolute lg:left-1 lg:bottom-1 lg:w-[20%]">
+        <div
+          id="job-container"
+          className="overflow-hidden pt-5 px-5 lg:absolute lg:left-1 lg:bottom-1 lg:w-[20%]"
+        >
           <img
             src={Experience}
             alt="experience title"
@@ -188,15 +210,6 @@ export default function Landing() {
           <Icons />
         </div>
       </div>
-      {/* <div
-        id="social-posts-section"
-        className="min-h-fit text-main-0 bg-cherry-0 flex justify-center items-center flex-col pt-15 pb-8 border-t-4 border-dashed border-main-0"
-      >
-        <div className="text-left pb-5 font-modak uppercase text-5xl">
-          Social Posts
-        </div>
-        <SlidingPost postImg={StickerOne} />
-      </div> */}
       <div
         id="graphic-designs-section"
         className="
@@ -214,7 +227,86 @@ export default function Landing() {
        border-t-4 border-dashed border-main-0
        "
       >
-        <div className="m-5 text-center">Graphics</div>
+        <div className="m-5 text-center">Static Ads</div>
+        <Gallery imageFilter={"Static Ad"} />
+      </div>
+      <div
+        className="
+        min-h-svh
+        max-w-full 
+        text-red-ochre
+       bg-sand-dune
+       font-modak 
+       uppercase 
+       text-6xl
+       flex
+       flex-col
+       justify-center
+       items-center
+       border-t-4 border-dashed border-red-ochre
+       "
+      >
+        <div className="m-5 text-center">Posters</div>
+        <Gallery imageFilter={"Posters"}/>
+      </div>
+      <div
+        className="
+        min-h-svh
+        max-w-full 
+        text-main-0
+       bg-cherry-0
+       font-modak 
+       uppercase 
+       text-4xl
+       lg:text-5xl
+       xl:text-6xl
+       flex
+       flex-col
+       justify-center
+       items-center
+       border-t-4 border-dashed border-main-0
+       "
+      >
+        <div className="m-5 text-center">Social Media Posts</div>
+        <Gallery imageFilter={"Social Media Posts"}/>
+      </div>
+      <div
+        className="
+        min-h-svh
+        max-w-full 
+        text-red-ochre
+       bg-sand-dune
+       font-modak 
+       uppercase 
+       text-6xl
+       flex
+       flex-col
+       justify-center
+       items-center
+       border-t-4 border-dashed border-red-ochre
+       "
+      >
+        <div className="m-5 text-center">Branding</div>
+        <Gallery imageFilter={"Ca-lasing"}/>
+      </div>
+      <div
+        className="
+        min-h-svh
+        max-w-full 
+        text-main-0
+        bg-cherry-0
+       font-modak 
+       uppercase 
+       text-5xl
+       lg:text-6xl
+       flex
+       flex-col
+       justify-center
+       items-center
+       border-t-4 border-dashed border-main-0
+       "
+      >
+        <div className="m-5 text-center">Infographics</div>
         <Gallery />
       </div>
       <div
@@ -307,17 +399,17 @@ export default function Landing() {
               }}
               className="cursor-pointer select-none w-7"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
                   fill="#cd400b"
                 ></path>{" "}
@@ -326,8 +418,8 @@ export default function Landing() {
                   fill="#cd400b"
                 ></path>{" "}
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
                   fill="#cd400b"
                 ></path>{" "}
@@ -336,7 +428,6 @@ export default function Landing() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="#cd400b"
-              class="bi bi-linkedin"
               viewBox="0 0 16 16"
               className="cursor-pointer select-none w-7"
               onClick={() => {

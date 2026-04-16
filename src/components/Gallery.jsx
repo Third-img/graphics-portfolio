@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import { useImages } from "../hooks/usePortfolio";
+import { useImages } from "../hooks/useDatabase";
 
-export default function Gallery() {
-  const { imageItems, imageLoading } = useImages();
+export default function Gallery({ imageFilter }) {
+  const { images, loading } = useImages();
   const [selectedImage, setSelectedImage] = useState(null);
+  
+  const imageFiltering = images.filter(image => image.category === imageFilter)
 
   useEffect(() => {
     if (selectedImage !== null) {
@@ -11,25 +13,22 @@ export default function Gallery() {
     } else {
       document.body.style.overflow = "auto";
     }
-
     return () => {
       document.body.style.overflow = "auto";
     };
   }, [selectedImage]);
 
-
-  if (imageLoading) return <p className="uppercase">Loading</p>;
-  // if (videoLoading) return <p className="uppercase">Loading</p>;
+  if (loading || imageFilter == null) return <p className="uppercase">Loading</p>;
 
   return (
     <>
       <div className="columns-2 sm:columns-3 lg:columns-6 px-5 leading-none gap-x-2 w-full mb-5 overflow-hidden">
-        {imageItems.map((imageItem) => (
-          <div className="w-full">
+        {imageFiltering.map((image, i) => (
+          <div className="w-full" key={i}>
             <img
-              key={imageItem.id}
-              src={imageItem.imageUrl}
-              alt={imageItem.title}
+              key={image.id}
+              src={image.imageUrl}
+              alt={image.title}
               className="
             block 
             w-full 
@@ -40,7 +39,7 @@ export default function Gallery() {
             mb-2 
             break-inside-avoid
             cursor-pointer"
-              onClick={() => setSelectedImage(imageItem)}
+              onClick={() => setSelectedImage(image)}
             />
           </div>
         ))}
@@ -63,29 +62,6 @@ export default function Gallery() {
           />
         </div>
       )}
-      {/* {selectedVideo !== null && (
-        <div
-          className="w-full max-h-screen fixed inset-0 bg-black/90 flex items-center justify-center z-50"
-          onClick={() => setSelectedVideo(null)}
-        >
-          <button
-            className="absolute top-8 right-8 text-white text-2xl sm:text-3xl lg:text-4xl cursor-pointer font-helvetica"
-            onClick={() => setSelectedVideo(null)}
-          >
-            x
-          </button>
-          <video
-            src={selectedVideo.videoUrl}
-            alt="video"
-            className="w-[80%] max-h-[80%] rounded-lg lg:rounded-3xl z-70"
-            controls
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        </div>
-      )} */}
     </>
   );
 }
