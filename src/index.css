@@ -20,7 +20,21 @@
   src: url(./assets/fonts/Modak-Regular.ttf);
 }
 
+@font-face {
+  font-family: "Socko";
+  src: url(./assets/fonts/Socko-Italic.ttf);
+}
+
+@font-face {
+  font-family: "Workbench";
+  font-style: normal;
+  font-weight: 400;
+  src: url(./assets/fonts/Workbench-Regular-VariableFont_BLED\,SCAN.ttf)
+    format("truetype");
+}
+
 @theme {
+  /* V1 Colors */
   --color-surface-0: #0c090a;
   --color-main-0: #dfd3b9;
   --color-cherry-0: #a52a2a;
@@ -32,10 +46,85 @@
   --color-rust-brown: #a33918;
   --color-flag-red: #d22925;
   --color-dark-khaki: #27240d;
+  /* Fonts */
   --font-bespoke: "Bespoke";
   --font-anton: "Anton", "sans-serif";
   --font-helvetica: "Helvetica", "sans-serif";
   --font-modak: "Modak", "sans-serif";
+  --font-socko: "Socko", "sans-serif";
+  --font-workbench: "Workbench", "sans";
+  /*Windows XP Theme Colors*/
+  --color-royal-blue-50: #e8effc;
+  --color-royal-blue-100: #d2def9;
+  --color-royal-blue-200: #a5bef3;
+  --color-royal-blue-300: #789ded;
+  --color-royal-blue-400: #4a7ce8;
+  --color-royal-blue-500: #1d5ce2;
+  --color-royal-blue-600: #1749b5;
+  --color-royal-blue-700: #123787;
+  --color-royal-blue-800: #0c255a;
+  --color-royal-blue-900: #06122d;
+  --color-royal-blue-950: #040d20;
+
+  --color-lime-moss-50: #f6faeb;
+  --color-lime-moss-100: #ecf5d6;
+  --color-lime-moss-200: #d9eaae;
+  --color-lime-moss-300: #c6e085;
+  --color-lime-moss-400: #b3d55d;
+  --color-lime-moss-500: #a0cb34;
+  --color-lime-moss-600: #80a22a;
+  --color-lime-moss-700: #607a1f;
+  --color-lime-moss-800: #405115;
+  --color-lime-moss-900: #20290a;
+  --color-lime-moss-950: #161c07;
+
+  --color-olive-leaf-50: #f4faea;
+  --color-olive-leaf-100: #e9f6d5;
+  --color-olive-leaf-200: #d3edab;
+  --color-olive-leaf-300: #bce382;
+  --color-olive-leaf-400: #a6da58;
+  --color-olive-leaf-500: #90d12e;
+  --color-olive-leaf-600: #73a725;
+  --color-olive-leaf-700: #567d1c;
+  --color-olive-leaf-800: #3a5412;
+  --color-olive-leaf-900: #1d2a09;
+  --color-olive-leaf-950: #141d06;
+
+  --color-laser-blue-50: #e9effc;
+  --color-laser-blue-100: #d3dff8;
+  --color-laser-blue-200: #a7bef1;
+  --color-laser-blue-300: #7b9eea;
+  --color-laser-blue-400: #4f7ee3;
+  --color-laser-blue-500: #225ddd;
+  --color-laser-blue-600: #1c4bb0;
+  --color-laser-blue-700: #153884;
+  --color-laser-blue-800: #0e2558;
+  --color-laser-blue-900: #07132c;
+  --color-laser-blue-950: #050d1f;
+
+  --color-cornflower-blue-50: #e8effc;
+  --color-cornflower-blue-100: #d1dffa;
+  --color-cornflower-blue-200: #a4bff4;
+  --color-cornflower-blue-300: #769eef;
+  --color-cornflower-blue-400: #487eea;
+  --color-cornflower-blue-500: #1b5ee4;
+  --color-cornflower-blue-600: #154bb7;
+  --color-cornflower-blue-700: #103889;
+  --color-cornflower-blue-800: #0b265b;
+  --color-cornflower-blue-900: #05132e;
+  --color-cornflower-blue-950: #040d20;
+
+  --color-forest-green-50: #ecf9ec;
+  --color-forest-green-100: #daf2d9;
+  --color-forest-green-200: #b4e6b3;
+  --color-forest-green-300: #8fd98c;
+  --color-forest-green-400: #69cc66;
+  --color-forest-green-500: #44bf40;
+  --color-forest-green-600: #369933;
+  --color-forest-green-700: #297326;
+  --color-forest-green-800: #1b4d19;
+  --color-forest-green-900: #0e260d;
+  --color-forest-green-950: #0a1b09;
 }
 
 html {
@@ -43,4 +132,10 @@ html {
 }
 html::-webkit-scrollbar {
   display: none;
+}
+#hero-section {
+  background-image: url("/src/assets/img/BackgroundOne.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }

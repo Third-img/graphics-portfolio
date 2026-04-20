@@ -4,8 +4,27 @@ import { useImages } from "../hooks/useDatabase";
 export default function Gallery({ imageFilter }) {
   const { images, loading } = useImages();
   const [selectedImage, setSelectedImage] = useState(null);
-  
-  const imageFiltering = images.filter(image => image.category === imageFilter)
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const imageFiltering = images.filter(
+    (image) => image.category === imageFilter,
+  );
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+
+    setSelectedIndex((prev) =>
+      prev === imageFiltering.length - 1 ? 0 : prev + 1,
+    );
+  };
+
+  const handlePrev = (e) => {
+    e.stopPropagation();
+
+    setSelectedIndex((prev) =>
+      prev === 0 ? imageFiltering.length - 1 : prev - 1,
+    );
+  };
 
   useEffect(() => {
     if (selectedImage !== null) {
@@ -18,13 +37,15 @@ export default function Gallery({ imageFilter }) {
     };
   }, [selectedImage]);
 
-  if (loading || imageFilter == null) return <p className="uppercase">Loading</p>;
+   if (loading) {
+    return <div className="uppercase">Loading</div>
+  }
 
   return (
     <>
       <div className="columns-2 sm:columns-3 lg:columns-6 px-5 leading-none gap-x-2 w-full mb-5 overflow-hidden">
-        {imageFiltering.map((image, i) => (
-          <div className="w-full" key={i}>
+        {imageFiltering.map((image, index) => (
+          <div className="w-full" key={index}>
             <img
               key={image.id}
               src={image.imageUrl}
@@ -39,27 +60,45 @@ export default function Gallery({ imageFilter }) {
             mb-2 
             break-inside-avoid
             cursor-pointer"
-              onClick={() => setSelectedImage(image)}
+              onClick={() => {
+                setSelectedImage(image);
+                setSelectedIndex(index);
+              }}
             />
           </div>
         ))}
       </div>
       {selectedImage !== null && (
         <div
-          className="w-full max-h-screen fixed inset-0 bg-black/90 flex items-center justify-center z-50"
-          onClick={() => setSelectedImage(null)}
+          className="
+          w-full 
+          max-h-screen 
+          fixed 
+          inset-0 
+          bg-black/90 
+          flex 
+          items-center 
+          justify-center 
+          z-30
+          cursor-pointer
+          "
+          onClick={() => {
+            setSelectedImage(null);
+            setSelectedIndex(null);
+          }}
+          id="swiper-wrapper"
         >
-          <button
-            className="absolute top-8 right-8 text-white text-2xl sm:text-3xl lg:text-4xl cursor-pointer font-helvetica"
-            onClick={() => setSelectedImage(null)}
+          <div
+            id="image-wrapper"
+            className="w-full h-screen flex items-center justify-center"
           >
-            x
-          </button>
-          <img
-            src={selectedImage.imageUrl}
-            alt={selectedImage.title}
-            className="max-w-[90%] max-h-[90%] rounded-xl z-70"
-          />
+            <img
+              onClick={(e) => e.stopPropagation()}
+              src={selectedImage.imageUrl}
+              alt={selectedImage.title}
+              className="max-w-[90%] max-h-[90%] rounded-xl z-70 cursor-default"
+            />
+          </div>
         </div>
       )}
     </>

@@ -1,4 +1,4 @@
-import Star from "../assets/img/Star Center.png";
+import { useState } from "react";
 import ID from "../assets/img/asset_4.png";
 import Experience from "../assets/img/asset_8.png";
 import JobOne from "../assets/img/asset_1.png";
@@ -13,15 +13,22 @@ import Icons from "../components/Icons.jsx";
 import { UploadModal } from "../components/Modal.jsx";
 import eventEmail from "../scripts/Mail";
 import {
-  scrollToSection,
   goToInstagram,
   goToLinkedIn,
+  scrollToSection,
 } from "../scripts/Links.js";
 import "../scripts/uploadGraphicForm.js";
+import Menu from "../components/Burger.jsx";
+import Background from "../assets/img/BackgroundOne.png";
+import Tasker from "../assets/icons/Question.png";
+import GraphicsIcon from "../assets/icons/TIFF.png";
+import ContactIcon from "../assets/icons/User Accounts.png";
+import SpeechIcon from "../assets/icons/Speech.png";
 
 export default function Landing() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <>
+    <div>
       <svg
         viewBox="0 0 218 218"
         preserveAspectRatio="none"
@@ -40,118 +47,189 @@ export default function Landing() {
         <rect width="100%" height="100%" filter="url(#noiseFilter)" />
       </svg>
       {/* <UploadModal /> */}
+      {/* Hero Section */}
       <div
         className="
         w-full 
         h-svh
-        font-anton
+        font-workbench
         uppercase
+        tracking-widest
         overflow-hidden
-         text-main-0
+         text-white
+         
          relative
-         bg-cherry-0"
+         bg-cherry-0
+         flex
+         flex-col
+         justify-center
+         "
         id="hero-section"
       >
-        <div className="flex justify-center self-center text-cherry-0 font-modak lowercase">
-          <img
-            src={Star}
-            alt="star"
-            className="max-w-full absolute top-[25%] lg:top-[10%] max-h-[90%]"
-          />
-          <span
-            id="about-button"
-            onClick={() => {
-              scrollToSection("about-section");
-            }}
-            className="px-1.5 text-2xl md:text-4xl border-2 bg-main-0 rounded-sm absolute top-[50%] left-[30%] cursor-pointer select-none"
-          >
-            about
-          </span>
-          <span
-            id="graphics-design-button"
-            onClick={() => {
-              scrollToSection("graphic-designs-section");
-            }}
-            className="px-1.5 text-2xl md:text-4xl border-2 rounded-sm bg-main-0 absolute top-[30%] left-[25%] lg:left-[40%] cursor-pointer select-none"
-          >
-            my work
-          </span>
-          <span
-            id="contact-button"
-            onClick={() => {
-              scrollToSection("contact-section");
-            }}
-            className="px-1.5 text-2xl md:text-4xl border-2 rounded-sm bg-main-0 absolute top-[38%] right-[10%] lg:right-[30%] cursor-pointer select-none"
-          >
-            let's collab
-          </span>
-        </div>
-        <div className="absolute top-1 left-1 text-6xl md:text-9xl 2xl:text-[12rem]">
-          I'm
-        </div>
-        <div className="absolute top-1 right-1 text-6xl md:text-9xl 2xl:text-[12rem]">
-          Third
-        </div>
-        <div className="absolute bottom-1 left-1 text-6xl md:text-9xl 2xl:text-[12rem]">
-          A
-        </div>
+        {/* Burger */}
+        {/* <svg
+          viewBox="0 0 24 24"
+          fill="#cd400b"
+          xmlns="http://www.w3.org/2000/svg"
+          className="absolute right-2 top-2 md:hidden"
+          style={{ width: "40px" }}
+          
+        >
+          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+          <g
+            id="SVGRepo_tracerCarrier"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          ></g>
+          <g id="SVGRepo_iconCarrier">
+            {" "}
+            <path
+              d="M4 18L20 18"
+              stroke="#cd400b"
+              strokeWidth="3"
+              strokeLinecap="round"
+            ></path>{" "}
+            <path
+              d="M5 11L20 14"
+              stroke="#cd400b"
+              strokeWidth="3"
+              strokeLinecap="round"
+            ></path>{" "}
+            <path
+              d="M4 6L20 6"
+              stroke="#ffffff"
+              strokeWidth="3"
+              strokeLinecap="round"
+            ></path>{" "}
+          </g>
+        </svg> */}
         <div
           className="
+        w-10
+        mx-2 
         absolute 
-        bottom-1 
-        right-1
-        text-6xl 
-        md:text-9xl
-        md:leading-30
-        2xl:text-[12rem]
-        2xl:leading-43
-        leading-15 
-        text-right"
+        top-2 
+        right-1 
+        flex 
+        flex-col 
+        justify-center
+        items-center
+        xl:hidden
+        "
+          onClick={() => setIsMenuOpen(true)}
         >
-          Graphic <br /> Designer
+          <img src={Tasker} alt="" />
+          <div
+            className="
+          font-helvetica 
+          capitalize
+          text-center
+          text-sm
+          text-shadow-lg
+          text-shadow-black/40
+          "
+          >
+            Menu
+          </div>
         </div>
-        <div className="font-modak lowercase text-cherry-0"></div>
+        <Menu isOpen={isMenuOpen} setIsOpen={setIsMenuOpen} />
+        <div className="hero-text-container text-center">
+          <div
+            className="text-5xl lg:text-7xl xl:text-9xl 
+            text-shadow-lg
+            text-shadow-black/50
+          "
+          >
+            I'm Querubin
+          </div>
+          <div
+            className="
+            
+          text-2xl lg:text-4xl xl:text-5xl
+          text-shadow-lg
+          text-shadow-black/50
+          font-helvetica 
+          tracking-tighter
+          lowercase
+          "
+          >
+            a Graphic Designer
+          </div>
+          <div
+            className="hidden xl:flex flex-col items-center w-10 absolute top-[20%] left-[23%] cursor-pointer text-shadow-sm text-shadow-black/10"
+            onClick={() => scrollToSection("graphic-designs-section")}
+          >
+            <img src={GraphicsIcon} alt="" />
+            <div className="capitalize font-helvetica">graphics</div>
+          </div>
+          <div
+            onClick={() => scrollToSection("email-section")}
+            className="hidden xl:flex flex-col items-center w-10 absolute top-[10%] right-[23%] cursor-pointer text-shadow-sm text-shadow-black/10"
+          >
+            <img src={SpeechIcon} alt="" />
+            <div className="capitalize font-helvetica">contact</div>
+          </div>
+          <div
+            onClick={() => scrollToSection("about-section")}
+            className="hidden xl:flex flex-col items-center w-10 absolute bottom-[20%] left-[30%] cursor-pointer text-shadow-sm text-shadow-black/10"
+          >
+            <img src={ContactIcon} alt="" />
+            <div className="capitalize font-helvetica">User</div>
+          </div>
+        </div>
+        <hr className="border-b-5 border-laser-blue-500 w-[70%] self-center absolute bottom-0 rounded-sm" />
       </div>
       <div
         id="about-section"
-        className="w-full min-h-svh text-red-ochre bg-sand-dune border-t-4 border-dashed border-red-ochre relative overflow-hidden"
+        className="
+        w-full min-h-svh
+      text-red-ochre
+      bg-sand-dune 
+        relative 
+        overflow-hidden
+        xl:grid
+        xl:grid-cols-4
+       "
       >
         <img
           id="id-design"
           src={ID}
           alt="id badge"
-          className="w-full lg:w-[30%] lg:absolute lg:top-0"
+          className="
+          w-[calc(100%)]
+          "
         />
         <div
           id="paragraph-container"
-          className="px-20 font-helvetica text-center text-sm md:text-lg lg:text-xl leading-4"
+          className="
+          flex 
+          items-center 
+          flex-col
+          my-10 
+          px-5 
+          font-helvetica 
+          text-center 
+          text-sm 
+          md:text-lg 
+          lg:text-xl 
+          leading-4 
+          gap-10
+          "
           style={{ filter: "drop-shadow(0 0 2px)" }}
         >
-          <div
-            id="paragraph-one"
-            className="pb-1 lg:w-30 lg:absolute lg:top-3 lg:left-[24%]"
-          >
+          <div id="paragraph-one" className="pb-1 xl:w-80">
             I enjoy making visuals because I’ve consumed various medias and I
             like to make my own things exist.
           </div>
-          <div
-            id="paragraph-two"
-            className="pb-1 lg:w-40 lg:absolute lg:top-20 lg:left-[36%]"
-          >
+          <div id="paragraph-two" className="pb-1 xl:w-90">
             There’s also this weird desire to know what’s behind every great
             design, and my goal is to be others’ inspiration
           </div>
-          <div
-            id="paragraph-three"
-            className="pb-1 lg:w-60 lg:absolute lg:top-60 lg:left-[36%]"
-          >
+          <div id="paragraph-three" className="pb-1 xl:w-80">
             I love doing all these exhausting work with coffee by my side,
             making it worth the while and the workload to taste better.
           </div>
-          <div
-            id="paragraph-four"
-            className="pb-2 lg:w-40 lg:absolute lg:top-90 lg:left-[38%]"
-          >
+          <div id="paragraph-four" className="pb-2 xl:w-100">
             My life purpose is to improve, improve on everything that I do and
             I'll make sure that it happens.
           </div>
@@ -160,11 +238,16 @@ export default function Landing() {
           id="education-container"
           src={Education}
           alt="eudcation"
-          className="w-full px-15 pb-10 lg:absolute lg:w-[40%] lg:top-[10%] lg:right-0 lg:rotate-3"
+          className="w-full px-15 pb-10 lg:rotate-3"
         />
         <div
           id="job-container"
-          className="overflow-hidden pt-5 px-5 lg:absolute lg:left-1 lg:bottom-1 lg:w-[20%]"
+          className="
+        overflow-hidden 
+        pt-5 
+        px-5
+        w-70
+        "
         >
           <img
             src={Experience}
@@ -172,12 +255,7 @@ export default function Landing() {
             className="w-full rotate-5 pb-5"
             id="experience-placard"
           />
-          <img
-            src={DateOne}
-            alt="date one"
-            className="absolute z-10 w-[20%] left-[20%]"
-            id="dateOne-sticker"
-          />
+
           <img
             src={JobOne}
             alt="job one"
@@ -185,117 +263,86 @@ export default function Landing() {
             id="student-placard"
           />
           <img
+            src={DateOne}
+            alt="date one"
+            className="relative z-50"
+            id="dateOne-sticker"
+          />
+          <img
             src={JobTwo}
             alt="job two"
             className="w-full rotate-9 pb-5"
             id="starbucks-placard"
           />
-          <img
-            src={DateTwo}
-            alt="date two"
-            className="relative z-10 w-[30%] bottom-5 left-[60%]"
-            id="dateTwo-sticker"
-          />
+          <img src={DateTwo} alt="date two" className="" id="dateTwo-sticker" />
         </div>
         <img
           id="sticker-one"
           src={StickerOne}
           alt="sticker"
-          className="w-full pb-15 px-15 lg:absolute lg:w-[20%] lg:right-1 lg:top-2 lg:p-0"
+          className="w-full lg:right-1 lg:top-2 lg:p-0"
         />
         <div
           id="editing-tools"
-          className="flex flex-col self-end-safe items-center pb-5 lg:absolute lg:bottom-1 lg:left-[25%]"
+          className="
+          pb-5 
+          lg:bottom-1 
+          lg:left-[25%]
+          "
         >
           <Icons />
         </div>
       </div>
+      <div className="w-full flex justify-center">
+          <hr className="border-b-5 border-laser-blue-500 w-[70%] self-center absolute bottom-0 rounded-sm" />
+        </div>
       <div
         id="graphic-designs-section"
         className="
-        min-h-svh
+        min-h-fit
         max-w-full 
        text-main-0
        bg-cherry-0
-       font-modak 
+       font-socko 
        uppercase 
        text-6xl
        flex
        flex-col
        justify-center
        items-center
-       border-t-4 border-dashed border-main-0
        "
       >
         <div className="m-5 text-center">Static Ads</div>
         <Gallery imageFilter={"Static Ad"} />
+        
       </div>
       <div
         className="
-        min-h-svh
+        min-h-fit
         max-w-full 
         text-red-ochre
        bg-sand-dune
-       font-modak 
+       font-helvetica
+       tracking-tighter 
        uppercase 
        text-6xl
        flex
        flex-col
        justify-center
        items-center
-       border-t-4 border-dashed border-red-ochre
        "
       >
         <div className="m-5 text-center">Posters</div>
-        <Gallery imageFilter={"Posters"}/>
+        <Gallery imageFilter={"Posters"} />
       </div>
       <div
         className="
-        min-h-svh
+        min-h-fit
         max-w-full 
         text-main-0
        bg-cherry-0
-       font-modak 
-       uppercase 
-       text-4xl
-       lg:text-5xl
-       xl:text-6xl
-       flex
-       flex-col
-       justify-center
-       items-center
-       border-t-4 border-dashed border-main-0
-       "
-      >
-        <div className="m-5 text-center">Social Media Posts</div>
-        <Gallery imageFilter={"Social Media Posts"}/>
-      </div>
-      <div
-        className="
-        min-h-svh
-        max-w-full 
-        text-red-ochre
-       bg-sand-dune
-       font-modak 
-       uppercase 
-       text-6xl
-       flex
-       flex-col
-       justify-center
-       items-center
-       border-t-4 border-dashed border-red-ochre
-       "
-      >
-        <div className="m-5 text-center">Branding</div>
-        <Gallery imageFilter={"Ca-lasing"}/>
-      </div>
-      <div
-        className="
-        min-h-svh
-        max-w-full 
-        text-main-0
-        bg-cherry-0
-       font-modak 
+       font-anton
+       tracking-tighter
        uppercase 
        text-5xl
        lg:text-6xl
@@ -303,15 +350,70 @@ export default function Landing() {
        flex-col
        justify-center
        items-center
-       border-t-4 border-dashed border-main-0
        "
       >
-        <div className="m-5 text-center">Infographics</div>
-        <Gallery />
+        <div className="m-5 text-center">Socmed Posts</div>
+        <Gallery imageFilter={"Social Media Posts"} />
+      </div>
+      <div
+        className="
+        min-h-fit
+        max-w-full 
+        text-red-ochre
+       bg-sand-dune
+       font-socko
+       tracking-wide
+       uppercase 
+       text-6xl
+       lg:text-7xl
+       flex
+       flex-col
+       justify-center
+       items-center
+       "
+      >
+        <div className="m-5 text-center">Ca-Lasing</div>
+        <Gallery imageFilter={"Ca-lasing"} />
+      </div>
+      <div
+        id="video-edit-section"
+        className="
+      w-full
+      min-h-fit
+      bg-cherry-0
+      p-5
+      "
+      >
+        <div className="font-socko uppercase text-center text-5xl lg:text-7xl text-sand-dune py-5">
+          Videos
+        </div>
+        <div
+          id="video-edit-container"
+          className="flex flex-col lg:flex-row gap-5 items-center justify-center"
+        >
+          <video
+            src="https://res.cloudinary.com/dr5ucxfox/video/upload/v1776175636/The_Contemporary_World_-_Gorup_6_Prelims_-_Trim_jqybdj.mp4"
+            autoPlay
+            controls
+            playsInline
+            muted
+            loop
+            className="rounded-xl lg:max-w-[50%]"
+          ></video>
+          <video
+            src="https://res.cloudinary.com/dr5ucxfox/video/upload/v1776175621/STI_College_Malolos_Teaser_fbbwte.mp4"
+            autoPlay
+            controls
+            playsInline
+            muted
+            loop
+            className="rounded-xl lg:max-w-[50%]"
+          ></video>
+        </div>
       </div>
       <div
         id="email-section"
-        className="min-h-fit w-full px-3 bg-sand-dune text-red-ochre border-t-4 border-dashed -mb-1 lg:flex lg:px-10 lg:items-center lg:justify-center lg:gap-x-10"
+        className="min-h-fit w-full px-3 bg-sand-dune text-red-ochre  -mb-1 lg:flex lg:px-10 lg:items-center lg:justify-center lg:gap-x-10"
       >
         <div id="form-holder">
           <div className="pt-5 font-modak text-5xl mb-1">Let's Collab!</div>
@@ -439,6 +541,6 @@ export default function Landing() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
