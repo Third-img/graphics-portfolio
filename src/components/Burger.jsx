@@ -1,6 +1,7 @@
 import { documentId } from "firebase/firestore";
 import { scrollToSection } from "../scripts/Links.js";
 import { useEffect } from "react";
+import Close from "../assets/icons/Exit.png"
 
 export default function Burger({ isOpen, setIsOpen }) {
   useEffect(() => {
@@ -36,7 +37,7 @@ export default function Burger({ isOpen, setIsOpen }) {
           className="absolute top-2 right-2 text-4xl z-100"
           onClick={() => setIsOpen(false)}
         >
-          x
+          <img src={Close} alt="" className="w-8"/>
         </div>
         <div className="uppercase flex flex-col justify-center h-full items-center text-sand-dune font-socko">
           <span

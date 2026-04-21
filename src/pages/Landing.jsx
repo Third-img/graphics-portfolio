@@ -67,42 +67,6 @@ export default function Landing() {
         id="hero-section"
       >
         {/* Burger */}
-        {/* <svg
-          viewBox="0 0 24 24"
-          fill="#cd400b"
-          xmlns="http://www.w3.org/2000/svg"
-          className="absolute right-2 top-2 md:hidden"
-          style={{ width: "40px" }}
-          
-        >
-          <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-          <g
-            id="SVGRepo_tracerCarrier"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          ></g>
-          <g id="SVGRepo_iconCarrier">
-            {" "}
-            <path
-              d="M4 18L20 18"
-              stroke="#cd400b"
-              strokeWidth="3"
-              strokeLinecap="round"
-            ></path>{" "}
-            <path
-              d="M5 11L20 14"
-              stroke="#cd400b"
-              strokeWidth="3"
-              strokeLinecap="round"
-            ></path>{" "}
-            <path
-              d="M4 6L20 6"
-              stroke="#ffffff"
-              strokeWidth="3"
-              strokeLinecap="round"
-            ></path>{" "}
-          </g>
-        </svg> */}
         <div
           className="
         w-10
@@ -137,7 +101,9 @@ export default function Landing() {
           <div
             className="text-5xl lg:text-7xl xl:text-9xl 
             text-shadow-lg
-            text-shadow-black/50
+            text-shadow-black/20
+            font-dotgothic
+            mb-2
           "
           >
             I'm Querubin
@@ -145,9 +111,9 @@ export default function Landing() {
           <div
             className="
             
-          text-2xl lg:text-4xl xl:text-5xl
+          text-xl lg:text-3xl xl:text-4xl
           text-shadow-lg
-          text-shadow-black/50
+          text-shadow-black/20
           font-helvetica 
           tracking-tighter
           lowercase
@@ -177,9 +143,9 @@ export default function Landing() {
             <div className="capitalize font-helvetica">User</div>
           </div>
         </div>
-        <hr className="border-b-5 border-laser-blue-500 w-[70%] self-center absolute bottom-0 rounded-sm" />
+        <hr className="rounded-sm border-b-5 border-laser-blue-500/50 w-[70%] self-center absolute bottom-0" />
       </div>
-      <div
+      {/* <div
         id="about-section"
         className="
         w-full min-h-svh
@@ -292,44 +258,43 @@ export default function Landing() {
         >
           <Icons />
         </div>
-      </div>
-      <div className="w-full flex justify-center">
-          <hr className="border-b-5 border-laser-blue-500 w-[70%] self-center absolute bottom-0 rounded-sm" />
-        </div>
+      </div> */}
       <div
         id="graphic-designs-section"
         className="
         min-h-fit
         max-w-full 
-       text-main-0
-       bg-cherry-0
-       font-socko 
+       text-white
+       bg-laser-blue-500
+       font-workbench
        uppercase 
-       text-6xl
+       text-5xl
+       lg:text-6xl
        flex
        flex-col
        justify-center
        items-center
+       px-5
        "
       >
-        <div className="m-5 text-center">Static Ads</div>
+        <div className="m-5 text-center ">Static Ads</div>
         <Gallery imageFilter={"Static Ad"} />
-        
       </div>
       <div
         className="
         min-h-fit
         max-w-full 
-        text-red-ochre
-       bg-sand-dune
-       font-helvetica
-       tracking-tighter 
+        text-white
+       bg-laser-blue-500
+       font-workbench
        uppercase 
-       text-6xl
+       text-5xl
+       lg:text-6xl
        flex
        flex-col
        justify-center
        items-center
+       px-5
        "
       >
         <div className="m-5 text-center">Posters</div>
@@ -339,10 +304,9 @@ export default function Landing() {
         className="
         min-h-fit
         max-w-full 
-        text-main-0
-       bg-cherry-0
-       font-anton
-       tracking-tighter
+        text-white
+       bg-laser-blue-500
+       font-workbench
        uppercase 
        text-5xl
        lg:text-6xl
@@ -350,6 +314,7 @@ export default function Landing() {
        flex-col
        justify-center
        items-center
+       px-5
        "
       >
         <div className="m-5 text-center">Socmed Posts</div>
@@ -357,19 +322,19 @@ export default function Landing() {
       </div>
       <div
         className="
-        min-h-fit
-        max-w-full 
-        text-red-ochre
-       bg-sand-dune
-       font-socko
-       tracking-wide
+       min-h-fit
+       max-w-full 
+     text-white
+       bg-laser-blue-500
+       font-workbench
        uppercase 
-       text-6xl
-       lg:text-7xl
+       text-5xl
+       lg:text-6xl
        flex
        flex-col
        justify-center
        items-center
+       px-5
        "
       >
         <div className="m-5 text-center">Ca-Lasing</div>
@@ -380,11 +345,12 @@ export default function Landing() {
         className="
       w-full
       min-h-fit
-      bg-cherry-0
+     text-white
+      bg-laser-blue-500
       p-5
       "
       >
-        <div className="font-socko uppercase text-center text-5xl lg:text-7xl text-sand-dune py-5">
+        <div className="font-workbench uppercase text-center text-5xl lg:text-6xl py-5">
           Videos
         </div>
         <div
@@ -413,10 +379,10 @@ export default function Landing() {
       </div>
       <div
         id="email-section"
-        className="min-h-fit w-full px-3 bg-sand-dune text-red-ochre  -mb-1 lg:flex lg:px-10 lg:items-center lg:justify-center lg:gap-x-10"
+        className="-min-h-fit w-full px-3 bg-webblue text-white  -mb-1 lg:flex lg:px-10 lg:items-center lg:justify-center lg:gap-x-10"
       >
         <div id="form-holder">
-          <div className="pt-5 font-modak text-5xl mb-1">Let's Collab!</div>
+          <div className="pt-5 font-dotgothic tracking-tighter text-5xl text-white mb-3">Let's Collab!</div>
           <form
             id="contact-form"
             className="flex flex-col pb-5"
@@ -425,21 +391,21 @@ export default function Landing() {
             <input
               type="text"
               name="user_name"
-              className="w-40 h-fit text-base focus:outline-0 font-bespoke border rounded-sm p-1 mb-2"
+              className="w-40 h-fit text-base focus:outline-0 font-dotgothic border rounded-sm p-1 mb-2"
               placeholder="Name"
               required
             />
             <input
               type="email"
               name="from_email"
-              className="w-60 h-fit text-base focus:outline-0 font-bespoke border rounded-sm p-1 mb-2"
+              className="w-60 h-fit text-base focus:outline-0 font-dotgothic border rounded-sm p-1 mb-2"
               placeholder="Email"
               required
             />
             <input
               type="text"
               name="subject"
-              className="w-70 h-fit text-base focus:outline-0 font-bespoke border rounded-sm p-1 mb-2"
+              className="w-70 h-fit text-base focus:outline-0 font-dotgothic border rounded-sm p-1 mb-2"
               placeholder="Subject"
               required
             />
@@ -447,12 +413,12 @@ export default function Landing() {
               name="message"
               id="message-box"
               placeholder="Send Message"
-              className="w-70 min-h-[3lh] field-sizing-content focus:outline-0 text-base font-bespoke border rounded-sm p-1 mb-2"
+              className="w-70 min-h-[3lh] field-sizing-content focus:outline-0 text-base font-dotgothic border rounded-sm p-1 mb-2"
               required
             ></textarea>
             <button
               type="submit"
-              className="font-modak p-1 px-4 w-fit text-xl bg-red-ochre text-sand-dune rounded-sm mb-3 select-none cursor-pointer"
+              className="font-workbench p-1 px-4 w-fit text-xl bg-linear-to-t from-royal-blue-200 to-white/80 text-royal-blue-600 border-3 border-white rounded-sm mb-3 select-none cursor-pointer"
             >
               Send
             </button>
@@ -460,11 +426,11 @@ export default function Landing() {
         </div>
         <div
           id="contact-section"
-          className="min-h-fit w-full bg-sand-dune text-red-ochre pb-1"
+          className="min-h-fit w-full bg-webblue text-lime-moss-800 pb-1"
         >
           <div
             id="slide-container"
-            className="font-modak bg-sand-dune rounded-lg text-red-ochre text-3xl flex flex-col border-2 border-dashed p-2"
+            className="font-workbench bg-linear-to-t from-royal-blue-200 to-white/80 rounded-lg text-royal-blue-600 text-3xl flex flex-col border-3 border-white p-2"
           >
             <span
               className="cursor-pointer select-none"
@@ -494,7 +460,7 @@ export default function Landing() {
           <div id="social-container" className="my-3 flex gap-x-2 items-center">
             <svg
               viewBox="0 0 24 24"
-              fill="#cd400b"
+              fill="#ffffff"
               xmlns="http://www.w3.org/2000/svg"
               onClick={() => {
                 goToInstagram();
@@ -513,23 +479,23 @@ export default function Landing() {
                   fillRule="evenodd"
                   clipRule="evenodd"
                   d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
-                  fill="#cd400b"
+                  fill="#ffffff"
                 ></path>{" "}
                 <path
                   d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
-                  fill="#cd400b"
+                  fill="#ffffff"
                 ></path>{" "}
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
                   d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z"
-                  fill="#cd400b"
+                  fill="#ffffff"
                 ></path>{" "}
               </g>
             </svg>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              fill="#cd400b"
+              fill="#ffffff"
               viewBox="0 0 16 16"
               className="cursor-pointer select-none w-7"
               onClick={() => {

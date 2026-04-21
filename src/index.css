@@ -33,6 +33,11 @@
     format("truetype");
 }
 
+@font-face {
+  font-family: "DotGothic";
+  src: url(./assets/fonts/DotGothic16-Regular.ttf);
+}
+
 @theme {
   /* V1 Colors */
   --color-surface-0: #0c090a;
@@ -53,6 +58,7 @@
   --font-modak: "Modak", "sans-serif";
   --font-socko: "Socko", "sans-serif";
   --font-workbench: "Workbench", "sans";
+  --font-dotgothic: "DotGothic", "sans";
   /*Windows XP Theme Colors*/
   --color-royal-blue-50: #e8effc;
   --color-royal-blue-100: #d2def9;
@@ -125,10 +131,14 @@
   --color-forest-green-800: #1b4d19;
   --color-forest-green-900: #0e260d;
   --color-forest-green-950: #0a1b09;
+
+  --color-webgray: #C0C0C0;
+  --color-webblue: #2462EA;
+  --color-webskin: #ECE8D7;
 }
 
 html {
-  background-color: var(--color-surface-0);
+  background-color: #1d5ce2;
 }
 html::-webkit-scrollbar {
   display: none;
