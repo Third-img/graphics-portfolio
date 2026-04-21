@@ -23,3 +23,6 @@ Modal.jsx
 *.njsproj
 *.sln
 *.sw?
+
+# api keys
+.env

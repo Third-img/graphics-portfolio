@@ -2,8 +2,10 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyD_wKAqlLFu7nHDDyDa7I5Cs55ln9YBBX8",
+  apiKey: apiKey,
   authDomain: "graphic-portfolio-database.firebaseapp.com",
   projectId: "graphic-portfolio-database",
   storageBucket: "graphic-portfolio-database.firebasestorage.app",
