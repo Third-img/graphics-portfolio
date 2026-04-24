@@ -149,3 +149,9 @@ html::-webkit-scrollbar {
   background-size: cover;
   background-position: center;
 }
+#about-section{
+  background-image: url("/src/assets/img/BackgroundTwo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

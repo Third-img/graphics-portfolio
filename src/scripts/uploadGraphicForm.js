@@ -6,6 +6,7 @@ async function saveToFirestore(data) {
     title: data.title,
     imageUrl: data.imageUrl,
     category: data.category,
+    imageGroup: data.group,
     createdAt: serverTimestamp(),
   });
 }
@@ -16,11 +17,13 @@ export const formUpload = async (e) => {
   const title = document.getElementById("title").value;
   const imageUrl = document.getElementById("imageUrl").value;
   const category = document.getElementById("category").value;
+  const group = document.getElementById("imageGroup").value;
 
   await saveToFirestore({
     title,
     imageUrl,
     category,
+    group,
   });
 
   alert("upload succesful");

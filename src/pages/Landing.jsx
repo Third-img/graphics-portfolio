@@ -145,120 +145,158 @@ export default function Landing() {
         </div>
         <hr className="rounded-sm border-b-5 border-laser-blue-500/50 w-[70%] self-center absolute bottom-0" />
       </div>
-      {/* <div
+      <div
         id="about-section"
         className="
-        w-full min-h-svh
-      text-red-ochre
-      bg-sand-dune 
+        w-full 
+        min-h-fit
+      text-webskin
+      font-dotgothic
         relative 
         overflow-hidden
-        xl:grid
-        xl:grid-cols-4
+        flex
+        flex-col
+        justify-center
+        items-center
+        px-5
        "
       >
-        <img
-          id="id-design"
-          src={ID}
-          alt="id badge"
-          className="
-          w-[calc(100%)]
-          "
-        />
         <div
-          id="paragraph-container"
+          id="about-content-holder"
           className="
+        backdrop-blur-xl
+        rounded-xl
+        m-10
+        relative
+        w-full
+        min-h-fit
+        flex
+        flex-col
+        items-center
+        justify-center
+        xl:min-h-200
+        "
+        >
+          <img
+            id="id-design"
+            src={ID}
+            alt="id badge"
+            className="
+          w-[calc(100%)]
+          xl:w-150
+          xl:absolute
+          top-0
+          right-1/6
+          "
+          />
+          <div
+            id="paragraph-container"
+            className="
           flex 
           items-center 
           flex-col
           my-10 
           px-5 
-          font-helvetica 
+          font-dotgothic 
           text-center 
           text-sm 
           md:text-lg 
-          lg:text-xl 
+          xl:text-xl 
           leading-4 
           gap-10
+          xl:absolute
+          left-1
+          top-1/9
           "
-          style={{ filter: "drop-shadow(0 0 2px)" }}
-        >
-          <div id="paragraph-one" className="pb-1 xl:w-80">
-            I enjoy making visuals because I’ve consumed various medias and I
-            like to make my own things exist.
+          >
+            <div id="paragraph-one" className="pb-1 rotate-1 xl:w-80">
+              I enjoy making visuals because I’ve consumed various medias and I
+              like to make my own things exist.
+            </div>
+            <div id="paragraph-two" className="pb-1 -rotate-1 xl:w-90">
+              There’s also this weird desire to know what’s behind every great
+              design, and my goal is to be others’ inspiration
+            </div>
+            <div id="paragraph-three" className="pb-1 rotate-1 xl:w-80">
+              I love doing all these exhausting work with coffee by my side,
+              making it worth the while and the workload to taste better.
+            </div>
+            <div id="paragraph-four" className="pb-2 -rotate-1 xl:w-100">
+              My life purpose is to improve, improve on everything that I do and
+              I'll make sure that it happens.
+            </div>
           </div>
-          <div id="paragraph-two" className="pb-1 xl:w-90">
-            There’s also this weird desire to know what’s behind every great
-            design, and my goal is to be others’ inspiration
-          </div>
-          <div id="paragraph-three" className="pb-1 xl:w-80">
-            I love doing all these exhausting work with coffee by my side,
-            making it worth the while and the workload to taste better.
-          </div>
-          <div id="paragraph-four" className="pb-2 xl:w-100">
-            My life purpose is to improve, improve on everything that I do and
-            I'll make sure that it happens.
-          </div>
-        </div>
-        <img
-          id="education-container"
-          src={Education}
-          alt="eudcation"
-          className="w-full px-15 pb-10 lg:rotate-3"
-        />
-        <div
-          id="job-container"
-          className="
-        overflow-hidden 
-        pt-5 
-        px-5
-        w-70
-        "
-        >
-          <img
-            src={Experience}
-            alt="experience title"
-            className="w-full rotate-5 pb-5"
-            id="experience-placard"
-          />
 
           <img
-            src={JobOne}
-            alt="job one"
-            className="w-full -rotate-8 pb-5"
-            id="student-placard"
+            id="education-container"
+            src={Education}
+            alt="eudcation"
+            className="
+            w-100 
+            pb-10
+            xl:rotate-3
+            xl:absolute
+            top-1
+            right-1
+            "
           />
+          <div
+            id="job-container"
+            className="
+        overflow-hidden 
+        w-90
+        xl:w-60
+        px-5
+        pb-10
+        xl:absolute
+        bottom-1
+        right-1
+        "
+          >
+            <img
+              src={Experience}
+              alt="experience title"
+              className="w-full pb-2"
+              id="experience-placard"
+            />
+
+            <img
+              src={JobOne}
+              alt="job one"
+              className="w-full pb-2"
+              id="student-placard"
+            />
+            <img
+              src={JobTwo}
+              alt="job two"
+              className="w-full pb-2"
+              id="starbucks-placard"
+            />
+          </div>
           <img
-            src={DateOne}
-            alt="date one"
-            className="relative z-50"
-            id="dateOne-sticker"
+            id="sticker-one"
+            src={StickerOne}
+            alt="sticker"
+            className="
+            w-100
+            px-2
+            xl:absolute
+            bottom-1
+            left-1
+            lg:rotate-4
+            "
           />
-          <img
-            src={JobTwo}
-            alt="job two"
-            className="w-full rotate-9 pb-5"
-            id="starbucks-placard"
-          />
-          <img src={DateTwo} alt="date two" className="" id="dateTwo-sticker" />
-        </div>
-        <img
-          id="sticker-one"
-          src={StickerOne}
-          alt="sticker"
-          className="w-full lg:right-1 lg:top-2 lg:p-0"
-        />
-        <div
-          id="editing-tools"
-          className="
+          <div
+            id="editing-tools"
+            className="
           pb-5 
-          lg:bottom-1 
-          lg:left-[25%]
+          
           "
-        >
-          <Icons />
+          >
+            {/* <Icons /> */}
+          </div>
         </div>
-      </div> */}
+      </div>
       <div
         id="graphic-designs-section"
         className="
@@ -341,6 +379,26 @@ export default function Landing() {
         <Gallery imageFilter={"Ca-lasing"} />
       </div>
       <div
+        className="
+       min-h-fit
+       max-w-full 
+     text-white
+       bg-laser-blue-500
+       font-workbench
+       uppercase 
+       text-5xl
+       lg:text-6xl
+       flex
+       flex-col
+       justify-center
+       items-center
+       px-5
+       "
+      >
+        <div className="m-5 text-center">Apparel</div>
+        <Gallery imageFilter={"Apparel"} />
+      </div>
+      <div
         id="video-edit-section"
         className="
       w-full
@@ -382,7 +440,9 @@ export default function Landing() {
         className="-min-h-fit w-full px-3 bg-webblue text-white  -mb-1 lg:flex lg:px-10 lg:items-center lg:justify-center lg:gap-x-10"
       >
         <div id="form-holder">
-          <div className="pt-5 font-dotgothic tracking-tighter text-5xl text-white mb-3">Let's Collab!</div>
+          <div className="pt-5 font-dotgothic tracking-tighter text-5xl text-white mb-3">
+            Let's Collab!
+          </div>
           <form
             id="contact-form"
             className="flex flex-col pb-5"

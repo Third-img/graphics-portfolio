@@ -46,6 +46,13 @@ export function UploadModal() {
             />
             <input
               type="text"
+              id="imageGroup"
+              placeholder="Image Group"
+              className="border p-1 rounded-sm mb-2"
+              required
+            />
+            <input
+              type="text"
               id="category"
               list="graphic-category"
               placeholder="Category"
